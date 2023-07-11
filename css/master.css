@@ -112,8 +112,6 @@ ul {
 .settings .option-box .btns span.active {
     opacity: 1;
 }
-.settings .settings-container .option-box span:hover {
-}
 /* start of landing */
 .landing {
     background-image: url(/imgs/landing04.jpg);
