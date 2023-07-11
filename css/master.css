@@ -19,7 +19,7 @@ ul {
     top: 0;
     width:200px;
     height: 100%;
-    z-index: 2;
+    z-index: 3;
     background-color: #fff;
     transition: .3s;
 }
@@ -40,20 +40,27 @@ ul {
 }
 .settings .settings-container {
     position: absolute;
-    top: 150px;
+    top: 0;
     left: 0;
     width: 100%;
 }
 .settings .settings-container h5 {
     text-align: center;
-    font-weight: 700;
-    font-size: 25px;
+    font-weight: 500;
+    font-size: 15px;
+}
+.settings .settings-container .option-box {
+    padding: 15px;
+    margin: 10px;
+    margin-top: 20px;
+    background-color: #eee;
+    border-radius: 6px;
 }
 .settings .settings-container .option-box .colors {
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
 }
 .settings .settings-container .option-box .colors li {
     width: 30px;
@@ -61,10 +68,13 @@ ul {
     cursor: pointer;
     opacity: .3;
     transition: .3s;
+    border-radius: 50%;
+    border: 3px solid #eee;
 }
 .settings .settings-container .option-box .colors li.active,
 .settings .settings-container .option-box .colors li:hover {
     opacity: 1;
+    border-color: white;
 }
 .settings .settings-container .option-box .colors li:first-child {
     background-color: #ff4331;
@@ -77,6 +87,32 @@ ul {
 }
 .settings .settings-container .option-box .colors li:last-child {
     background-color: #66fcf1;
+}
+/* second option box */
+.settings .settings-container .option-box .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 5px
+    ;
+}
+.settings .settings-container .option-box span {
+    padding: 3px 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+    transition: .3s;
+    opacity: .5;
+}
+.settings .option-box .btns span.active {
+    opacity: 1;
+}
+.settings .settings-container .option-box span:hover {
 }
 /* start of landing */
 .landing {
@@ -94,15 +130,43 @@ ul {
 }
 .nav-area {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 20px;
     box-shadow: 0 0 5px #000;
+    flex-wrap: wrap;
+    transition: .3s;
 }
-.landing .nav-area .logo {
+.nav-area.open {
+    /* background-color: rgb(0 0 0 / .6); */
+    backdrop-filter: blur(10px);
+}
+.landing .nav-area .logo  {
+    flex: 1;
+}
+.landing .nav-area .logo p {
     color: var(--main-color);
     font-size: 30px;
     font-weight: 600;
-    flex: 1;
+}
+.landing .nav-area .logo svg {
+    cursor: pointer;
+    color: var(--main-color);
+}
+.landing .nav-area .links {
+    gap: 3rem;
+    overflow: hidden;
+    transition: .3s;
+    align-items: center;
+}
+.landing .nav-area .links.open {
+    height: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.landing .nav-area .login-btn.open {
+    height: 30px;
+    overflow: visible;
+    margin: 20px auto 0;
 }
 .landing .nav-area .links li a {
     text-decoration: none;
@@ -113,6 +177,7 @@ ul {
 .landing .nav-area .links li a:hover {
     color: var(--main-color);
 }
+
 .landing .nav-area .login-btn a {
     color: #fff;
     text-decoration: none;
@@ -133,11 +198,37 @@ ul {
     top: 50%;
     transform: translate(-50%,-50%);
     z-index: 1;
-    max-width: 600px;
+    width: 100%;
     color: #fff;
     text-align: center;
     text-transform: capitalize;
+    padding: 0 20px;
 }
 .landing .intro-text h1 span {
     color: var(--main-color);
+}
+@media (max-width: 767px) {
+    .landing .nav-area .links {
+        width: 100%;
+        flex-direction: column;
+        gap: 0px;
+        height: 0;
+        overflow: hidden;
+    }
+    .landing .nav-area .links li {
+        width: 100%;
+    }
+    .landing .nav-area .links li a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+    .landing .nav-area .login-btn  {
+        height: 0;
+        overflow: hidden;
+    }
+    .landing .nav-area .login-btn a {
+        margin-left: 0;
+    }
 }
