@@ -94,3 +94,30 @@ barIcon.onclick = function() {
         e.classList.toggle("open")
     })
 }
+// skills progress on scroll
+let ourSkills = document.querySelector(".our-skills")
+let spans = document.querySelectorAll(".progress span")
+let started = false
+window.onscroll = function() {
+    if (scrollY >= ourSkills.offsetTop) {
+        spans.forEach(e => {
+            let width = e.dataset.progress
+            e.style.width = `${width}%`
+        })
+        if (!started) {
+            spans.forEach(element => increaseNums(element))
+        }
+        started = true
+    }
+}
+function increaseNums(element) {
+    let counter = 0
+    let dataProgress = element.dataset.progress
+    let progInterval = setInterval(()=> {
+        counter++
+        element.dataset.width = `${counter}%`
+        if (counter == dataProgress) {
+            clearInterval(progInterval)
+        }
+    }, 1000 / dataProgress)
+}
