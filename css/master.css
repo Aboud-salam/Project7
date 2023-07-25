@@ -8,7 +8,6 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    height: 5000px;
 }
 ul {
     list-style: none;
@@ -361,3 +360,69 @@ ul {
         align-self: normal;
     }
 }
+/* end of our skills */
+/* start of gallery */
+.gallery {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+}
+.gallery h2 {
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 75px;
+}
+.gallery .container .imgs-holder img {
+    width: 300px;
+    margin: 5px;
+    padding: 3px;
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.gallery-over {
+    background-color: rgb(0 0 0 / 70%);
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    left: 0;
+    top: 0;
+}
+.gallery-over .overlay-content {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+}
+.gallery-over .overlay-content h3 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+.gallery-over .overlay-content {
+    user-select: none;
+}
+.gallery-over .overlay-content .x-btn {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    background-color: var(--main-color);
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    display: grid;
+    place-content: center;
+    color: #fff;
+}
+.gallery-over .overlay-content .x-btn svg {
+    font-size: 14px;
+}
+/* @media (max-width:767px) {
+    .gallery-over{
+        display: none;
+    }
+} */

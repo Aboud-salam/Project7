@@ -99,7 +99,7 @@ let ourSkills = document.querySelector(".our-skills")
 let spans = document.querySelectorAll(".progress span")
 let started = false
 window.onscroll = function() {
-    if (scrollY >= ourSkills.offsetTop) {
+    if (scrollY > (ourSkills.offsetTop + ourSkills.offsetHeight - this.innerHeight)) {
         spans.forEach(e => {
             let width = e.dataset.progress
             e.style.width = `${width}%`
@@ -121,3 +121,37 @@ function increaseNums(element) {
         }
     }, 1000 / dataProgress)
 }
+// imgs pop up
+let gallery = document.querySelector(".gallery")
+let galleryImgs = document.querySelectorAll(".gallery .container img")
+const mediaQuery = window.matchMedia('(min-width: 768px)')
+galleryImgs.forEach(img => {
+    img.addEventListener("click", (e) => {
+        if (mediaQuery.matches) {
+            let src = img.src
+            let overlay = document.createElement("div")
+            overlay.classList.add("gallery-over")
+            let overlayContent = document.createElement("div")
+            overlayContent.classList.add("overlay-content")
+            let overImg = document.createElement("img")
+            overImg.src = `${src}`
+            overlayContent.appendChild(overImg)
+            let iconDiv = document.createElement("div")
+            iconDiv.classList.add("x-btn")
+            let xIcon = document.createElement("i")
+            xIcon.classList.add("fa-solid", "fa-x")
+            iconDiv.appendChild(xIcon)
+            overlayContent.appendChild(iconDiv)
+            if (img.alt !== null) {
+                let imgHeading = document.createElement("h3")
+                imgHeading.appendChild(document.createTextNode(img.alt))
+                overlayContent.prepend(imgHeading)
+            }
+            overlay.appendChild(overlayContent)
+            gallery.prepend(overlay)
+            iconDiv.onclick = function() {
+                overlay.remove()
+            }
+        }
+    })
+})
