@@ -383,7 +383,7 @@ ul {
 }
 .gallery-over {
     background-color: rgb(0 0 0 / 70%);
-    position: absolute;
+    position: fixed;
     z-index: 10;
     width: 100%;
     height: 100%;
@@ -421,8 +421,156 @@ ul {
 .gallery-over .overlay-content .x-btn svg {
     font-size: 14px;
 }
-/* @media (max-width:767px) {
-    .gallery-over{
+/* end of gallery overlay */
+/* start of timeline */
+.timeline {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: #eee;
+}
+.timeline .container h2 {
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 75px;
+}
+.timeline .container .timeline-content {
+    position: relative;
+    overflow: hidden;
+}
+.timeline .container .timeline-content::after {
+    content: '';
+    position: absolute;
+    height: calc(100% + 50px);
+    width: 2px;
+    background-color: var(--main-color);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.timeline .container .timeline-content .year {
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 4px 10px;
+    color: #fff;
+    width: fit-content;
+    margin: 20px auto;
+    border-radius: 6px;
+}
+.timeline .container .timeline-content .left {
+    float: left;
+}
+.timeline .container .timeline-content .right {
+    float: right;
+}
+.timeline .container .timeline-content .left,
+.timeline .container .timeline-content .right {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: calc(50% - 25px);
+    position: relative;
+    margin: 10px 0;
+}
+.timeline .container .timeline-content .left::before, 
+.timeline .container .timeline-content .right::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid var(--main-color);
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+}
+.timeline .container .timeline-content .left::before {
+    right: -32px;
+}
+.timeline .container .timeline-content .right::before {
+    left: -32px;
+}
+.timeline .container .timeline-content .left::after,
+.timeline .container .timeline-content .right::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    position: absolute;
+    top: 20px;
+}
+.timeline .container .timeline-content .left::after {
+    right: -19.2px;
+    border-color: transparent transparent transparent #fff;
+}
+.timeline .container .timeline-content .right::after {
+    left: -19.2px;
+    border-color: transparent #fff transparent transparent;
+}
+.timeline .container .timeline-content h3 {
+    font-weight: bold;
+    font-size: 24px;
+}
+.timeline .container .timeline-content p {
+    line-height: 1.6;
+    color: #666;
+}
+@media (max-width:767px) {
+    .timeline .container .timeline-content .left,
+    .timeline .container .timeline-content .right {
+    width: 100%;
+    }
+    .timeline .container .timeline-content::after {
         display: none;
     }
-} */
+}
+/* end of timeline */
+/* start of features */
+.features {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.features h2 {
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 75px;
+}
+.features .container .feat {
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.features .container .feat img {
+    width: 90px;
+    border: 4px solid white;
+    margin-bottom: 40px;
+    outline: 4px solid black;
+    border-radius: 50%;
+}
+.features .container .feat h4 {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.features .container .feat h4::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    border-radius: 6px;
+}
+.features .container .feat p {
+    color: #676767;
+    font-size: 15px;
+    line-height: 1.7;
+    width: 80%;
+    margin: 0 auto;
+    text-transform: capitalize;
+}
