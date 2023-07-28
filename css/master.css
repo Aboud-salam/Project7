@@ -574,3 +574,13 @@ ul {
     margin: 0 auto;
     text-transform: capitalize;
 }
+@media (max-width: 991px) {
+    .features .container .feat {
+        width: calc(100% / 2);
+    }
+}
+@media (max-width: 767px) {
+    .features .container .feat {
+        width: 100%;
+    }
+}
