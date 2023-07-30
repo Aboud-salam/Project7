@@ -155,3 +155,19 @@ galleryImgs.forEach(img => {
         }
     })
 })
+// scroll to sections function
+let bullets = document.querySelectorAll(".nav-bullets .bullet")
+let navLinks = document.querySelectorAll(".links a")
+function scrollTO(elements) {
+    elements.forEach(el => {
+        el.addEventListener("click", (e) => {
+            // prevent default to disable the a tag click as its a link originally
+            e.preventDefault();
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior: 'smooth'
+            })
+        })
+    })
+}
+scrollTO(bullets)
+scrollTO(navLinks)

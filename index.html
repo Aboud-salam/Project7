@@ -36,6 +36,25 @@
             </div>
         </div>
     </div>
+    <!-- end of settings -->
+    <!-- start of bullets -->
+    <div class="nav-bullets">
+        <div class="bullet" data-section=".about-us">
+            <div class="tip-tool">about us</div>
+        </div>
+        <div class="bullet" data-section=".our-skills">
+            <div class="tip-tool">our skills</div>
+        </div>
+        <div class="bullet" data-section=".gallery">
+            <div class="tip-tool">gallery</div>
+        </div>
+        <div class="bullet" data-section=".timeline">
+            <div class="tip-tool">timeline</div>
+        </div>
+        <div class="bullet" data-section=".features">
+            <div class="tip-tool">features</div>
+        </div>
+    </div>
     <div class="landing" data-img="/imgs/landing04.jpg">
         <div class="overlay"></div>
         <div class="nav-area d-flex justify-content-between align-items-center">
@@ -46,10 +65,12 @@
                 </div>
             </div>
             <ul class="links d-flex">
-                <li><a href="#" class="active">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="" class="active" data-section=".about-us">About</a></li>
+                <li><a href="" data-section=".our-skills">Skills</a></li>
+                <li><a href="" data-section=".gallery">Gallery</a></li>
+                <li><a href="" data-section=".timeline">Timeline</a></li>
+                <li><a href="" data-section=".features">Features</a></li>
+                <li><a href="" data-section=".testimonials">Testimonials</a></li>
             </ul>
             <div class="login-btn">
                 <a href="#">Log In</a>
@@ -60,7 +81,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ad tempora perspiciatis quam ipsum deleniti.</p>
         </div>
     </div>
-    <div class="about-us">
+    <div class="about-us" id="about">
         <div class="container d-flex align-items-center">
             <div class="info-box">
                 <h2>About Us</h2>
@@ -71,7 +92,7 @@
             </div>
         </div>
     </div>
-    <div class="our-skills">
+    <div class="our-skills" id="skills">
         <div class="container text-center text-md-start">
             <h2 class="">Our Skills</h2>
             <div class="skills-content d-flex">
@@ -101,7 +122,7 @@
             </div>
         </div>
     </div>
-    <div class="gallery">
+    <div class="gallery" id="gallery">
         <!-- <div class="gallery-over">
             <div class="overlay-content">
                 <img src="/imgs/gallery01.jpg" alt="">
@@ -126,7 +147,7 @@
     </div>
     <!-- end of gallery -->
     <!-- start of timeline -->
-    <div class="timeline">
+    <div class="timeline" id="timeline">
         <div class="container">
             <h2>Timeline</h2>
             <div class="timeline-content">
@@ -155,7 +176,7 @@
     </div>
     <!-- end of timeline -->
     <!-- start of features -->
-    <div class="features">
+    <div class="features" id="features">
         <div class="container">
             <h2>Our Features</h2>
             <div class="feats-holder">
@@ -195,7 +216,7 @@
     </div>
     <!-- end of features -->
     <!-- start of testimonials -->
-    <div class="testimonials">
+    <div class="testimonials" id="testimonials">
         <div class="container">
             <h2>Testimonials</h2>
             <div class="testimonials-holder">
@@ -203,24 +224,26 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam et praesentium, autem tenetur repudiandae?</p>
                     <div class="testi-info">
                         <img src="/imgs/testi.png" alt="">
-                        <h4>Mohamed Ali</h4>
-                        <p>CEO of Infinity</p>
+                        <h4>Mohamed Ali
+                            <p>CEO of Infinity</p>
+                        </h4>
                     </div>
                 </div>
                 <div class="testi">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam et praesentium, autem tenetur repudiandae?</p>
                     <div class="testi-info">
                         <img src="/imgs/testi.png" alt="">
-                        <h4>Mohamed Ali</h4>
-                        <p>CEO of Infinity</p>
+                        <h4>Mohamed Ali 
+                            <p>CEO of Infinity</p></h4>
                     </div>
                 </div>
                 <div class="testi">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aliquam et praesentium, autem tenetur repudiandae?</p>
                     <div class="testi-info">
                         <img src="/imgs/testi.png" alt="">
-                        <h4>Mohamed Ali</h4>
-                        <p>CEO of Infinity</p>
+                        <h4>Mohamed Ali
+                            <p>CEO of Infinity</p>
+                        </h4>
                     </div>
                 </div>
             </div>

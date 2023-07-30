@@ -114,6 +114,55 @@ ul {
 .settings .option-box .btns span.active {
     opacity: 1;
 }
+/* end of settings */
+/* start of bullets */
+.nav-bullets {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 9;
+}
+.nav-bullets .bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    background-color: #fff;
+    position: relative;
+    margin: 15px auto;
+    cursor: pointer;
+}
+.nav-bullets .bullet:hover .tip-tool {
+    display: block;
+}
+.nav-bullets .bullet .tip-tool {
+    position: absolute;
+    left: -110px;
+    top: -8px;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 4px 10px;
+    width: 95px;
+    text-align: center;
+    cursor: default;
+    pointer-events: none;
+    display: none;
+    text-transform: capitalize;
+}
+.nav-bullets .bullet .tip-tool::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    position: absolute;
+    border-color: transparent transparent transparent var(--main-color);
+    right: -19px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 /* start of landing */
 .landing {
     background-image: url(/imgs/landing04.jpg);
@@ -153,7 +202,7 @@ ul {
     color: var(--main-color);
 }
 .landing .nav-area .links {
-    gap: 3rem;
+    gap: 2rem;
     overflow: hidden;
     transition: .3s;
     align-items: center;
@@ -628,10 +677,19 @@ ul {
     background-color: #fff;
     padding: 20px;
 }
+.testimonials .container .testi > p {
+    font-style: italic;
+    font-size: 15px;
+    color: #666;
+}
+.testimonials .container .testi .testi-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 .testimonials .container .testi .testi-info img {
     width: 60px;
     border-radius: 50%;
-    margin: 20px 0;
 }
 .testimonials .container .testi .testi-info h4 {
     font-size: 17px;
@@ -639,8 +697,8 @@ ul {
     margin-bottom: 0;
 }
 .testimonials .container .testi .testi-info p {
-    color: #666;
-    font-size: 15px;
+    color: #777;
+    font-size: 13px;
     margin: 5px 0;
 }
 @media (max-width: 767px) {
