@@ -95,7 +95,7 @@ barIcon.onclick = function() {
     })
 }
 // skills progress on scroll
-let ourSkills = document.querySelector(".our-skills")
+let ourSkills = document.querySelector(".skills")
 let spans = document.querySelectorAll(".progress span")
 let started = false
 window.onscroll = function() {
@@ -156,7 +156,20 @@ galleryImgs.forEach(img => {
     })
 })
 // scroll to sections function
+let sectionsArr = ["about", "skills", "gallery", "timeline", "features", "testimonials"];
+let navBullets = document.querySelector(".nav-bullets")
+sectionsArr.forEach(sec => {
+    let bullet = document.createElement("div")
+    bullet.classList.add("bullet")
+    bullet.dataset.section = `.${sec}`
+    let tipTool = document.createElement("div")
+    tipTool.classList.add("tip-tool")
+    tipTool.appendChild(document.createTextNode(`${sec}`))
+    bullet.appendChild(tipTool)
+    navBullets.appendChild(bullet)
+})
 let bullets = document.querySelectorAll(".nav-bullets .bullet")
+console.log(bullets)
 let navLinks = document.querySelectorAll(".links a")
 function scrollTO(elements) {
     elements.forEach(el => {

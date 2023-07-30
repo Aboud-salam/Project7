@@ -129,7 +129,6 @@ ul {
     height: 20px;
     border-radius: 50%;
     border: 3px solid var(--main-color);
-    background-color: #fff;
     position: relative;
     margin: 15px auto;
     cursor: pointer;
@@ -139,12 +138,12 @@ ul {
 }
 .nav-bullets .bullet .tip-tool {
     position: absolute;
-    left: -110px;
+    left: -135px;
     top: -8px;
     background-color: var(--main-color);
     color: #fff;
     padding: 4px 10px;
-    width: 95px;
+    width: 120px;
     text-align: center;
     cursor: default;
     pointer-events: none;
@@ -283,32 +282,32 @@ ul {
 }
 /* end of landing */
 /* start of about us */
-.about-us {
+.about {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
 }
-.about-us .info-box {
+.about .info-box {
     flex: 1;
 }
-.about-us .info-box h2 {
+.about .info-box h2 {
     color: var(--main-color);
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-.about-us .info-box p {
+.about .info-box p {
     line-height: 1.6;
     color: #585858;
 }
-.about-us .image-box {
+.about .image-box {
     flex: 1;
     text-align: center;
 }
-.about-us .image-box img {
+.about .image-box img {
     width: 250px;
 }
 @media (max-width: 767px) {
-    .about-us .container {
+    .about .container {
         flex-direction: column;
         gap: 40px;
         text-align: center;
@@ -317,35 +316,35 @@ ul {
 }
 /* end of about us */
 /* start of skills */
-.our-skills {
+.skills {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
     background-color: var(--section-bg);
 }
-.our-skills .container h2 {
+.skills .container h2 {
     color: var(--main-color);
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 35px;
 }
-.our-skills .container .skills-content {
+.skills .container .skills-content {
     gap: 50px;
     align-items: center;
 }
-.our-skills .container .skills-holder {
+.skills .container .skills-holder {
     flex: 1;
 }
-.our-skills .container .name {
+.skills .container .name {
     text-transform: uppercase;
     color: #535353;
     width: 130px;
 }
-.our-skills .container .progress {
+.skills .container .progress {
     height: 2rem;
     overflow: visible;
     width: 100%;
 }
-.our-skills .container .skills-holder .skill-box {
+.skills .container .skills-holder .skill-box {
     display: flex;
     padding: 20px;
     background-color: #fff;
@@ -353,16 +352,16 @@ ul {
     gap: 10px;
     border-radius: .375rem;
 }
-.our-skills .container .skills-holder .skill-box:not(:last-child) {
+.skills .container .skills-holder .skill-box:not(:last-child) {
     margin-bottom: 30px;
 }
-.our-skills .container .skills-holder .skill-box span {
+.skills .container .skills-holder .skill-box span {
     background-color: var(--main-color);
     position: relative;
     border-radius: .375rem;
     transition: 1s;
 }
-.our-skills .container .skills-holder .skill-box span::after {
+.skills .container .skills-holder .skill-box span::after {
     content: attr(data-width);
     position: absolute;
     width: 40px;
@@ -376,7 +375,7 @@ ul {
     align-items: center;
     border-radius: 0.375rem;
 }
-.our-skills .container .skills-holder .skill-box span::before {
+.skills .container .skills-holder .skill-box span::before {
     content: '';
     position: absolute;
     border-width: 6px;
@@ -386,26 +385,26 @@ ul {
     top: -15px;
     right: -6px;
 }
-.our-skills .container .image-holder img {
+.skills .container .image-holder img {
     width: 450px;
 }
 @media (max-width: 991px) {
-    .our-skills .container .image-holder img {
+    .skills .container .image-holder img {
         width: 250px;
     }
 }
 @media (max-width: 767px) {
-    .our-skills .container .image-holder img {
+    .skills .container .image-holder img {
         width: 250px;
     }
-    .our-skills .container .skills-content {
+    .skills .container .skills-content {
         flex-direction: column;
         gap: 25px;
     }
-    .our-skills .container .skills-content .image-holder {
+    .skills .container .skills-content .image-holder {
         flex: 1;
     }
-    .our-skills .container .skills-holder {
+    .skills .container .skills-holder {
         align-self: normal;
     }
 }
