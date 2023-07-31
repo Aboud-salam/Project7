@@ -18,7 +18,7 @@
             <i class="fa-solid fa-gear"></i>
         </div>
         <div class="settings-container">
-            <div class="option-box">
+            <div class="option-box colors-option">
                 <h5>Colors</h5>
                 <ul class="colors">
                     <li data-color="ff4331" class="active"></li>
@@ -27,13 +27,21 @@
                     <li data-color="66fcf1"></li>
                 </ul>
             </div>
-            <div class="option-box">
+            <div class="option-box background-shuffle">
                 <h5>Background Shuffle</h5>
                 <div class="btns">
                     <span class="yes active" data-background="yes">Yes</span>
                     <span class="no" data-background="no">No</span>
                 </div>
             </div>
+            <div class="option-box bullets-option">
+                <h5>Bullets Option</h5>
+                <div class="btns">
+                    <span class="yes active" data-bullets="yes">Yes</span>
+                    <span class="no" data-bullets="no">No</span>
+                </div>
+            </div>
+            <div class="reset-btn">Reset Options</div>
         </div>
     </div>
     <!-- end of settings -->
@@ -248,6 +256,26 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- end of testimonials -->
+    <!-- start of contact -->
+    <div class="contact" id="contact">
+        <div class="contact-overlay"></div>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="">
+                <div class="left">
+                    <input type="text" placeholder="Your Username" name="username">
+                    <input type="text" placeholder="Your Phone" name="phone">
+                    <input type="email" placeholder="Your Email" name="email">
+                    <input type="text" placeholder="Subject" name="subject">
+                </div>
+                <div class="right">
+                    <textarea name="message" placeholder="Your Message"></textarea>
+                    <input type="submit" value="Send">
+                </div>
+            </form>
         </div>
     </div>
     <script src="/js/bootstrap.bundle.min.js"></script>

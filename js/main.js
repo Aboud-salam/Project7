@@ -4,12 +4,12 @@ let originalImg = landing.dataset.img
 let imgsArr = ["/imgs/landing02.jpg", "/imgs/landing03.jpg", "/imgs/landing04.jpg", "/imgs/landing05.jpg", "/imgs/landing06.jpg"];
 let myInterval;
 let randomizeOption = true;
+let backgroundBtns = document.querySelectorAll(".background-shuffle .btns span")
 let backgroundLocalStoarage = localStorage.getItem("randomize-option")
 if (backgroundLocalStoarage !== null) {
     if (localStorage.getItem("randomize-option") !== "true") {
         randomizeOption = false
-        document.querySelector(".option-box .btns .active").classList.remove("active")
-        document.querySelector(".option-box .btns .no").classList.add("active")
+        localClassesHan(backgroundBtns, document.querySelector(".background-shuffle .btns .no"))
     }
 }
 function shuffleFun() {
@@ -22,12 +22,10 @@ function shuffleFun() {
 }
 shuffleFun()
 // random background option
-let btnsArr = document.querySelectorAll(".option-box .btns span")
 let randomBackground;
-btnsArr.forEach(btn => {
+backgroundBtns.forEach(btn => {
     btn.addEventListener("click", function(e) {
-        e.target.parentElement.querySelectorAll(".active").forEach(el => el.classList.remove("active"))
-        e.target.classList.add("active")
+        handleClasses(e)
         if (e.target.dataset.background === "yes") {
             randomizeOption = true;
             shuffleFun()
@@ -63,12 +61,7 @@ if (window.localStorage.getItem("color")) {
 // handling colors
 colorsArr.forEach(color => {
     color.addEventListener("click", function(e) {
-        // other way to delete active class from all elements
-        // e.target.parentElement.querySelectorAll(".active").forEach(element => {element.classList.remove("active")})
-        colorsArr.forEach(c => {
-            c.classList.remove("active")
-        })
-        e.target.classList.add("active")
+        handleClasses(e)
         changeColor(e)
         addToLocalStorage()
     })
@@ -81,6 +74,12 @@ function changeColor(e) {
 // add color to localstorage
 function addToLocalStorage() {
     window.localStorage.setItem("color", chosenColor)
+}
+function handleClasses(e) {
+    e.target.parentElement.querySelectorAll(".active").forEach(e => {
+        e.classList.remove("active")
+    })
+    e.target.classList.add("active")
 }
 // nav toggle 
 let barIcon = document.querySelector(".icon")
@@ -156,7 +155,7 @@ galleryImgs.forEach(img => {
     })
 })
 // scroll to sections function
-let sectionsArr = ["about", "skills", "gallery", "timeline", "features", "testimonials"];
+let sectionsArr = ["about", "skills", "gallery", "timeline", "features", "testimonials", "contact"];
 let navBullets = document.querySelector(".nav-bullets")
 sectionsArr.forEach(sec => {
     let bullet = document.createElement("div")
@@ -169,7 +168,6 @@ sectionsArr.forEach(sec => {
     navBullets.appendChild(bullet)
 })
 let bullets = document.querySelectorAll(".nav-bullets .bullet")
-console.log(bullets)
 let navLinks = document.querySelectorAll(".links a")
 function scrollTO(elements) {
     elements.forEach(el => {
@@ -184,3 +182,50 @@ function scrollTO(elements) {
 }
 scrollTO(bullets)
 scrollTO(navLinks)
+
+// bullets option
+let bulletsBtns = document.querySelectorAll(".bullets-option .btns span")
+let bulletsOption = true;
+
+// local storage handling
+if (localStorage.getItem("bullets-option")) {
+    if (localStorage.getItem("bullets-option") !== "true") {
+        bulletsOption = false;
+        bulletsHandler()
+        localClassesHan(bulletsBtns, document.querySelector(".bullets-option .btns .no"))
+    }
+}
+bulletsBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+        handleClasses(e)
+        if (e.target.dataset.bullets === "yes") {
+            bulletsOption = true;
+            localStorage.setItem("bullets-option", bulletsOption)
+            bulletsHandler()
+        }
+        if (e.target.dataset.bullets === "no") {
+            bulletsOption = false;
+            localStorage.setItem("bullets-option", bulletsOption)
+            bulletsHandler()
+        }
+    })
+})
+function bulletsHandler() {
+    if (bulletsOption === true) {
+        document.querySelector(".nav-bullets").style.display = "block"
+    } else {
+        document.querySelector(".nav-bullets").style.display = "none"
+    }
+}
+function localClassesHan(elements, noBtn) {
+    elements.forEach(e => {
+        e.classList.remove("active")
+    })
+    noBtn.classList.add("active")
+}
+// reset btn 
+let resetBtn = document.querySelector(".reset-btn")
+resetBtn.onclick = function () {
+    localStorage.clear()
+    location.reload()
+}
