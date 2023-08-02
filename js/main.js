@@ -86,13 +86,28 @@ let barIcon = document.querySelector(".icon")
 let links = document.querySelector(".nav-area .links")
 let loginbBtn = document.querySelector(".login-btn")
 let nav = document.querySelector(".nav-area")
+const mediaQueryNav = window.matchMedia('(min-width: 768px)')
 let arr = [];
 arr.push(links,loginbBtn,nav)
-barIcon.onclick = function() {
+barIcon.addEventListener("click", e => {
     arr.forEach(e => {
         e.classList.toggle("open")
     })
+})
+// stop the propagation to prevent the parent element from accessing the event.
+// Basically, this method is used to prevent the propagation of the same event from being called
+nav.onclick = function (e) {
+    e.stopPropagation()
 }
+document.addEventListener("click", e => {
+    if (e.target !== nav) {
+        if (nav.classList.contains("open")) {
+            arr.forEach(e => {
+                e.classList.toggle("open")
+            })
+        }
+    }
+})
 // skills progress on scroll
 let ourSkills = document.querySelector(".skills")
 let spans = document.querySelectorAll(".progress span")
@@ -123,10 +138,10 @@ function increaseNums(element) {
 // imgs pop up
 let gallery = document.querySelector(".gallery")
 let galleryImgs = document.querySelectorAll(".gallery .container img")
-const mediaQuery = window.matchMedia('(min-width: 768px)')
+const mediaQueryImgs = window.matchMedia('(min-width: 768px)')
 galleryImgs.forEach(img => {
     img.addEventListener("click", (e) => {
-        if (mediaQuery.matches) {
+        if (mediaQueryImgs.matches) {
             let src = img.src
             let overlay = document.createElement("div")
             overlay.classList.add("gallery-over")
